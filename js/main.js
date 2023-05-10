@@ -13,10 +13,13 @@ const { createApp } = Vue
     methods: {
         status(i) {
             if (this.toDoList[i].done) {
-                return "true"
+                return "text-success"
             }
 
-            return "false"
+            return "text-danger"
+        },
+        remove(i) {
+            this.toDoList.splice(i, 1)
         },
         changeStatus(i) {
             this.toDoList[i].done = !this.toDoList[i].done
