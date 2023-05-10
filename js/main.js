@@ -30,7 +30,7 @@ const { createApp } = Vue
         addToDoList() {
             let newElement = {...this.newToDo};
 
-            this.toDoList.unshift(this.newElement)
+            this.toDoList.push(newElement)
         },
     }
   }).mount('#app')
