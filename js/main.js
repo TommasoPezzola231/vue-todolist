@@ -7,6 +7,9 @@ const { createApp } = Vue
             {text: "prova 1", done: false},
             {text: "prova 2", done: false},
             {text: "prova 3", done: false},
+        ],
+        newToDo: [
+            {text: "", done: false}
         ]
       }
     },
@@ -23,6 +26,11 @@ const { createApp } = Vue
         },
         changeStatus(i) {
             this.toDoList[i].done = !this.toDoList[i].done
-        }
+        },
+        addToDoList() {
+            let newElement = {...this.newToDo};
+
+            this.toDoList.unshift(this.newElement)
+        },
     }
   }).mount('#app')
